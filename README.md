@@ -1,6 +1,10 @@
-# Simple Terminal Patches
+# Patches
 
-[stdotsucklessdotorg](https://st.suckless.org/)
+Organization of patches and installation information.
+
+## Simple Terminal Patches
+
+[st.suckless.org](https://st.suckless.org/)
 
 Preferred patches:
 * 1-scrollback-ringbuffer-0.9.2.diff - efficient kbd scroll
@@ -14,7 +18,7 @@ Preferred patches:
 
 Good order to compile in. **Read compiler messages**.
 
-## Installation
+### Installation
 
 clone repo:
 ```shell
@@ -33,3 +37,47 @@ patch < patch.diff
 3. Compile & Test.
 
 4. Apply each of the rest of the patches one at a time, check for .rej files, fix blunders, rm config.h, compile and test.
+
+Extra
+---
+config.h
+: `static char *font = "Deja Vu Sans Mono:pixelsize=12:antialias=true:autohint=true";`
+
+config.h
+: `static unsigned int blinktimeout = 500;`
+
+## Herbe Patches
+
+[herbe repo](https://github.com/dudik/herbe)
+
+Preferred patches:
+* 16.diff - FreeBSD compilation
+* 19.diff - vertical stacking
+
+Good order to compile in.
+
+### Installation
+
+clone repo:
+```shell
+git clone https://github.com/dudik/herbe.git
+```
+
+apply patches accordingly. no issues during compilation.
+
+Extra
+---
+config.h
+: `static const char *background_color = "#282a36";`
+
+config.h
+: `static const char *border_color = "#ececec";`
+
+config.h
+: `static const char *font_color = "#00ff22";`
+
+config.h
+: `static const char *font_pattern = "xft:Deja Vu Sans Mono:weight=bold:size=8";`
+
+config.h
+: `static const unsigned int width = 225;`
